@@ -53,35 +53,6 @@
       if (savededulink) {
         eduinput.value = savededulink;
       }
-      ///////////////////////////
-      //\\//\\//\\//\\//\\//\\//
-      //////////////////////////
-      var recordButton = document.getElementById("recordKey");
-      
-      function recordKeystroke(keystrokeeeee) {
-        displayKeystroke.textContent = keystrokeeeee.key;
-        if (keystrokeeeee.key !== " ") {
-          document.removeEventListener("keydown", recordKeystroke);
-          localStorage.setItem("savedKey", displayKeystroke.textContent);
-          location.reload();
-        } else {
-          displayKeystroke.textContent = "[ENTER A KEY]";
-        }
-      }  
-      
-      recordButton.addEventListener("click", function() {
-        displayKeystroke.textContent = "[ENTER A KEY]";
-        document.addEventListener("keydown", recordKeystroke);
-        
-      });
-      changeURL.addEventListener("click", function() {
-        if (eduinput.value !== "") {
-          localStorage.setItem("savedEDU", eduinput.value);
-          location.reload();
-        } else {
-          alert('Error: cannot set a blank link, or must include ".com"');
-        }
-      });
       
       function handleKeyPress(event) {
         if (event.key === savedKey || event.key === savedKey) {
