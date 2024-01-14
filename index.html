@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The legends</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="stylesheet" href="/navbar.css" />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js"></script>
+
+    <link
+      id="currenticon"
+      rel="shortcut icon"
+      type="x-icon"
+      href="https://cdn.glitch.global/85ca753d-6f1a-4860-8d72-3d3d1723d7d9/Untitled_design__4_-removebg-preview.png?v=1696785070775"
+    />
+    <style>
+      /* add import font link here */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Press+Start+2P&display=swap");
+
+::placeholder {
+  color: #00008B;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12-18 */
+  color: #00008B;
+}
+
+* {
+  background-attachment: scroll;
+}
+
+body {
+  /* add font here */
+  font-family: "Poppins", sans-serif;
+  background-color: #4a86e8;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+    text-shadow:
+    -1px -1px 0 #000000, /* Top-left shadow (black) */
+    1px -1px 0 #000000, /* Top-right shadow (black) */
+    -1px 1px 0 #000000, /* Bottom-left shadow (black) */
+    1px 1px 0 #000000; /* Bottom-right shadow (black) */
+    overflow-x: hidden;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.brand-div > h1,
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #00008B;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 120%;
+  color: #FFFFFF;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+footer {
+  background: #1c4589;
+  font-weight: 500;
+  font-size: 20px;
+  color: #00ffff;
+  padding: 10px;
+  margin-top: 1em;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+img {
+  border-radius: 30px;
+}
+
+.timer {
+
+}
+
+.pagecounter {
+  background: #1c4589;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 15px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+
+.button {
+  background-color: #4a86e8;
+  padding: 10px 20px;
+}
+
+.input {
+  background: #1c4589;
+  color: #FFFFFF;
+  padding: 10px;
+}
+
+.play {
+  background-color: #4a86e8;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 20px 10px;
+  width: 25%;
+  
+}
+
+
+.background {
+  position: center;
+}
+
+.backgroundIndex {
+  margin-right:auto;
+  margin-left: auto;
+}
+
+.background > .button {
+  border: 1px solid #4a85e8;
+  color: #FFFFFF;
+  background: #4a85e8;
+  padding: 5px 10px;
+  border-radius: 3px;
+  height: 40px;
+  margin: 10px;
+  position: center;
+  bottom: -30px;
+  width: 40%
+}
+
+.background > .input {
+  border: none;
+  color: #FFFFFF;
+  background: #4a85e8;
+  padding: 5px 10px;
+  border-radius: 3px;
+  height: 40px;
+  margin: 10px;
+  position: center;
+  bottom: -30px;
+  width: 25%
+}
+/* add keyframe animation for float  */
+@keyframes float {
+  0% {
+    transform: scale(1);
+    background: #1c4589;
+    border: 1px solid #1c4589;
+  }
+  100% {
+    transform: scale(1);
+    background: #1c4589;
+    border: 1px solid #1c4589;
+  }
+  50% {
+    transform: scale(1.3);
+    background: #1c4589;
+    border: 1px solid #1c4589;
+  }
+}
+
+@keyframes smallStretch {
+  0% {
+    background: #325FA8;
+    border: 1px solid #325FA8;
+    width: 40%;
+  }
+  100% {
+    background: #325FA8;
+    border: 1px solid #325FA8;
+    width: 40%;
+  }
+  50% {
+    background: #325FA8;
+    border: 1px solid #FFF;
+    width: 50%;
+  }
+}
+
+@keyframes stretchy {
+  0% {
+    background: #FFF;
+    border: 1px solid #FFF;
+    width: 20%;
+  }
+  100% {
+    background: #FFFFFF;
+    border: 1px solid #FFF;
+    width: 20%;
+  }
+  50% {
+    background: #325FA8;
+    border: 1px solid #325FA8;
+    width: 25%;
+  }
+}
+/* Write CSS which will apply the animation on button hovering */
+
+.background > .button:hover {
+  background: #325FA8;
+  border: 1px solid #FFFFFF;
+}
+
+.backgroundIndex > .button:hover {
+  transform: scale(1.05);
+  animation: float 2s infinite;
+  transition: top 0.2s ease;
+}
+
+.card > .button > img {
+  width: 20%;
+}
+
+.background > .button > img {
+  width: 20%;
+}
+
+.gameList {
+  display:flex;
+  flex-wrap: wrap;
+  grid-template-columns: 60px 60px;
+}
+
+.card {
+  padding: 20px;
+  margin: 10px 0px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px #4a68e8;
+  border: 2px solid #4a68e8;
+  transition: transform 1s;
+  position: relative;
+  visibility: visible;
+  background: #1c4589;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  order: 0;
+  flex-grow: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card > .button {
+  border: 1px solid #4a85e8;
+  color: #FFFFFF;
+  background: #4a85e8;
+  padding: 5px 10px;
+  border-radius: 3px;
+  height: 40px;
+  margin: 10px;
+  position: center;
+  bottom: -30px;
+  width: 40%;
+}
+
+.card > .button:hover {
+  animation: smallStretch 3s infinite;
+  transition: top 0.2s ease;
+}
+
+.card > img {
+  width: 70%;
+  margin: 10px;
+}
+    </style>
+  </head>
+  <body>
+  <div
+        style="
+          background: #4a68e8;
+          border: 2px solid #FFFFFF;
+          border-radius: 30px;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        "
+        align="center"
+      >
+        <div class="background text-center">
+          <div class="col-md-12">
+            <p style="color: #0061ff; font-size: 35px; font-weight: 550">
+              About Blank Cloaker
+            </p>
+          </div>
+          <br />
+          <p>
+            MAKE SURE TO ADD HTTPS:// AT THE BEGINNING!
+          </p>
+          <br />
+          <input
+            type="url"
+            id="link"
+            placeholder="Your link here.."
+            class="input text-center"
+            style="border: 1px solid #FFFFFF; color: #FFFFFF;"
+          />
+          <button
+            class="button"
+            id="resetAll"
+            onclick="openBlankPage()"
+            style="width: 30%"
+          >
+            Open the page!</button
+          ><br />
+          <p>
+            about:blank cloaking is a tool that helps you cloak the
+            tabs and replace the link with about:blank.
+            <br />
+            <br />
+            To make it work, add any link to the input, then you can just open the page.<br />
+            MESSAGE: THIS MIGHT NOT WORK FOR ALL WEBSITES.
+          </p>
+        </div>
+        <br />
+      </div>
+    <div style="
+          background: #4a68e8;
+          border: 2px solid #ffffff;
+          border-radius: 30px;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 30px;
+        " align="center">
+        <div class="background text-center" style="margin-top: 10px">
+          <div class="col-md-12">
+            <p style="color: #0061ff; font-size: 35px; font-weight: 550">
+              Panic key system
+            </p>
+          </div>
+          <button class="button" id="recordKey" style="width: 35%">
+            Record keystroke
+          </button>
+          <br>
+          <div style="border: 2px solid #003F9E; border-radius: 15px; width: 50%; margin-right:auto; margin-left:auto;">
+            <p>
+            Recorded keystroke:
+          </p>
+          <p id="ksText" style="color: #339CFF; font-size:25px;">Record a keystroke!</p>
+          </div>
+          <input type="text" id="edulink" placeholder="Add custom link..." class="input text-center" style="border: 1px solid #ffffff">
+          <button class="button" id="setedulink" style="width: 20%">
+            Change link
+          </button>
+        </div>
+      </div>
+    <script>
+    
+      //Function for about:blank
+      function openBlankPage() {
+        var win = window.open();
+        var url = document.getElementById("link").value;
+        var iframe = win.document.createElement("iframe");
+        iframe.style.position = "fixed";
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.border = "none";
+        iframe.style.top = "0";
+        iframe.style.bottom = "0";
+        iframe.style.left = "0";
+        iframe.style.right = "0";
+        iframe.style.margin = "0";
+        iframe.style.padding = "0";
+        iframe.style.overflow = "hidden";
+        iframe.src = url;
+        win.document.body.appendChild(iframe);
+      }
+    
+    </script>
+    <script>
+      // Varibles
+      const defaultTitle = "The legends";
+      const savedTitle = localStorage.getItem("savedTitle");
+      const savedFavicon = localStorage.getItem("savedFavicon");
+      const savedKey = localStorage.getItem("savedKey");
+      const savededulink = localStorage.getItem("savedEDU");
+      var displayKeystroke = document.getElementById("ksText");
+      var changeURL = document.getElementById("setedulink");
+      let eduinput = document.getElementById("edulink");
+      //Checks for saved favicon
+      if (savedFavicon) {
+        document.getElementById("currenticon").href = savedFavicon;
+      }
+      // Checks for saved title
+      if (savedTitle) {
+        document.title = savedTitle;
+      }
+      if (savedKey) {
+        displayKeystroke.textContent = savedKey;
+      }
+      if (savededulink) {
+        eduinput.value = savededulink;
+      }
+      ///////////////////////////
+      //\\//\\//\\//\\//\\//\\//
+      //////////////////////////
+      var recordButton = document.getElementById("recordKey");
+      
+      function recordKeystroke(keystrokeeeee) {
+        displayKeystroke.textContent = keystrokeeeee.key;
+        if (keystrokeeeee.key !== " ") {
+          document.removeEventListener("keydown", recordKeystroke);
+          localStorage.setItem("savedKey", displayKeystroke.textContent);
+          location.reload();
+        } else {
+          displayKeystroke.textContent = "[ENTER A KEY]";
+        }
+      }  
+      
+      recordButton.addEventListener("click", function() {
+        displayKeystroke.textContent = "[ENTER A KEY]";
+        document.addEventListener("keydown", recordKeystroke);
+        
+      });
+      changeURL.addEventListener("click", function() {
+        if (eduinput.value !== "") {
+          localStorage.setItem("savedEDU", eduinput.value);
+          location.reload();
+        } else {
+          alert('Error: cannot set a blank link, or must include ".com"');
+        }
+      });
+      
+      function handleKeyPress(event) {
+        if (event.key === savedKey || event.key === savedKey) {
+          if (savededulink.includes("https://")) {
+            window.location.href = savededulink;
+          } else {
+            window.location.href = "https://" + savededulink;
+          }
+
+        }
+      }
+      document.addEventListener("keydown", handleKeyPress);
+
+      
+      ///////////////////////////
+      //\\//\\//\\//\\//\\//\\//
+      //////////////////////////
+    </script>
+  </body>
+</html>
