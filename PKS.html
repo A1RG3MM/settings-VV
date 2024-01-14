@@ -14,9 +14,9 @@
       function handleKeyPress(event) {
         if (event.key === savedKey || event.key === savedKey) {
           if (savededulink.includes("https://")) {
-            window.location.href = savededulink;
+            window.open(savededulink, '_blank');
           } else {
-            window.location.href = "https://" + savededulink;
+            window.open("https://" + savededulink, '_blank');
           }
 
         }
