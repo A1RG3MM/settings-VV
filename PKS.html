@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The legends</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="stylesheet" href="/navbar.css" />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js"></script>
+
+    <link
+      id="currenticon"
+      rel="shortcut icon"
+      type="x-icon"
+      href="https://cdn.glitch.global/85ca753d-6f1a-4860-8d72-3d3d1723d7d9/Untitled_design__4_-removebg-preview.png?v=1696785070775"
+    />
+  </head>
+  <body>
+    <script>
+      // Varibles
+      const defaultTitle = "The legends";
+      const savedTitle = localStorage.getItem("savedTitle");
+      const savedFavicon = localStorage.getItem("savedFavicon");
+      const savedKey = localStorage.getItem("savedKey");
+      const savededulink = localStorage.getItem("savedEDU");
+      var displayKeystroke = document.getElementById("ksText");
+      var changeURL = document.getElementById("setedulink");
+      let eduinput = document.getElementById("edulink");
+      //Checks for saved favicon
+      if (savedFavicon) {
+        document.getElementById("currenticon").href = savedFavicon;
+      }
+      // Checks for saved title
+      if (savedTitle) {
+        document.title = savedTitle;
+      }
+      if (savedKey) {
+        displayKeystroke.textContent = savedKey;
+      }
+      if (savededulink) {
+        eduinput.value = savededulink;
+      }
+      ///////////////////////////
+      //\\//\\//\\//\\//\\//\\//
+      //////////////////////////
+      var recordButton = document.getElementById("recordKey");
+      
+      function recordKeystroke(keystrokeeeee) {
+        displayKeystroke.textContent = keystrokeeeee.key;
+        if (keystrokeeeee.key !== " ") {
+          document.removeEventListener("keydown", recordKeystroke);
+          localStorage.setItem("savedKey", displayKeystroke.textContent);
+          location.reload();
+        } else {
+          displayKeystroke.textContent = "[ENTER A KEY]";
+        }
+      }  
+      
+      recordButton.addEventListener("click", function() {
+        displayKeystroke.textContent = "[ENTER A KEY]";
+        document.addEventListener("keydown", recordKeystroke);
+        
+      });
+      changeURL.addEventListener("click", function() {
+        if (eduinput.value !== "") {
+          localStorage.setItem("savedEDU", eduinput.value);
+          location.reload();
+        } else {
+          alert('Error: cannot set a blank link, or must include ".com"');
+        }
+      });
+      
+      function handleKeyPress(event) {
+        if (event.key === savedKey || event.key === savedKey) {
+          if (savededulink.includes("https://")) {
+            window.location.href = savededulink;
+          } else {
+            window.location.href = "https://" + savededulink;
+          }
+
+        }
+      }
+      document.addEventListener("keydown", handleKeyPress);
+
+      
+      ///////////////////////////
+      //\\//\\//\\//\\//\\//\\//
+      //////////////////////////
+    </script>
+  </body>
+</html>
